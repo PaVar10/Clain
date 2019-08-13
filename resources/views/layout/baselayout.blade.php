@@ -16,7 +16,10 @@
     <title>Clain</title>
   </head>
   <body>
-
+      <hr>
+        @if (session()->has('flash'))
+            <div class="alert alert-info">{{ session('flash')}} </div>
+        @endif
 
    
 @yield('content')

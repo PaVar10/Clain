@@ -12,7 +12,8 @@
                     <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link active mr-4" href="#">Link</a>
                     <a href="{{  route('users.create')}}"class="btn btn-primary mr-4">Nuevo Usuario</a>
-                    <button type="button" class="btn btn-success">Iniciar Session</button>
+                    <a href="{{  route('showlog')}}"class="btn btn-success mr-4">Iniciar Session</a>
+                    
 
                     
                 </div>  

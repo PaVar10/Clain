@@ -12,19 +12,26 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/demo', function () {
-    return view('demo');
-});
-Route::get('/index', function () {
     return view('index');
 });
 
-Route::get('/listado', 'InteractionController@listar')->name('list');
+// usuarios
 
 Route::get('/usuario','UserController@index')->name('users');
 
 Route::get('/usuario/nuevo','UserController@create')->name('users.create');
 
 Route::post('/usuario','UserController@store');
+
+Route::get('/listado', 'InteractionController@listar')->name('list');
+
+//login
+
+
+Route::get('/showlog','Auth\LoginController@showLoginForm')->name('showlog'); // mostrar login
+
+Route::POST('/login','Auth\LoginController@login')->name('login');
+
+Route::post('logout','Auth\LoginController@logout')->name('logout');
+
+Route::get('dashboard', 'DashboardController@index')->name('dashboard');

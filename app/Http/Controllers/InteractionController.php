@@ -10,7 +10,10 @@ class InteractionController extends Controller
 {
     public function listar()
     {
-        $list= Interaction::all();
+        $list= DB::table('interactions')->get();
+       // dd($list);
+     //   $list= Interaction::all();
         return view('listInt', compact('list'));
     }
+
 }
