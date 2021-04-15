@@ -1,14 +1,14 @@
 @extends('layout.baselayout')
 
 @section('content')
-	
+
 		
-	<div class="row justify-content-center">
+<div class="row justify-content-center">
         <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-default">
                 <div class="panel-heading" align="center">
                     <img class="mb-4" src="/images/logosolo.png" alt="" width="200" height="200"> <br>
-                    <h3 class="text-center">Crear Usuario</h3>
+                    <h3 class="text-center">Crear conversacion</h3>
                 </div>
                 <div class="panel-body">
 				<div class="card">
@@ -30,29 +30,26 @@
 		
 					@endif
 
-
-					<form method="POST" action="{{ url('usuario/store') }}">
+                    
+					<form method="POST" action="{{ url('conversacion/store') }}">
 
 						{!! csrf_field() !!} 
 
 						<div class="form-group">
-						<label for="name">Nombre: </label>
-						<input type="text" class="form-control" name="name" placeholder="Pablovaras" id="name" value="{{ old('name') }}">
-  					    </div>
+						<label for="name">Nombre de la conversacion: </label>
+						<input type="text" class="form-control" name="name" placeholder="..." id="name" value="{{ old('name') }}">
+  						</div>
 	
 
 						<div class="form-group">
-						 <label for="password">Email: </label>
-						 <input type="email" class="form-control" name="email" placeholder="Pablo.varas@gmail" id="email" value="{{ old('email') }}">
-						</div>
-		
-						<div class="form-group">
-						 <label for="password">Password: </label>
-					     <input type="password" class="form-control" name="password" placeholder="......."id="password">
+						 <label for="password">Descripcion: </label>
+						 <input type="text" class="form-control" name="descripcion" placeholder="..." id="descripcion" value="{{ old('descripcion') }}">
 						</div>
 
-						<button type="submit" class="btn btn-primary">Crear Usuario</button>
-						<a href="{{ route('users') }}"class="btn btn-link" >Regresar al listado de usuarios </a>
+
+						<button type="submit" class="btn btn-primary">Guardar Conversacion</button>
+						<a href="{{ route('users') }}"class="btn btn-link" >Regresar al menu usuarios </a> <br>
+                        <a href="{{  route('conversation.showlist')}}"class="btn btn-dark mr-4">Listado de conversaciones</a>
 				</form>
 	
 			</div>
@@ -64,5 +61,5 @@
         </div>
     </div>
 
-			
+
 @endsection

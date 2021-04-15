@@ -5,13 +5,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\User;
 
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class UserController extends Controller
 {
 
     public function index()
     {
-		    return view('demo');
+       // return view('demo');
+      
+       return redirect('/');
     }
 
 
@@ -39,8 +44,19 @@ class UserController extends Controller
     'email'=>$data['email'],
     'password'=>bcrypt($data['password']) 
     ]);
-
-    return redirect('users');
+    return redirect('/');
+    //return redirect('users');
   }
+
+
+
+
+
+    public function export() 
+    {
+        return Excel::download(new UsersExport, 'users.xlsx');
+    }
+
+
 
 }
