@@ -37,19 +37,7 @@
 
  <a href="{{  route('conversation.create')}}"class="btn btn-dark mr-4">cargar conversacion</a>
      
-     <form action="{{  route('listado.import')}}" method="POST" enctype="multipart/form-data">
-     
-    
-     <label>Seleccione el archivo de interacciones  </label>
-     <br>
-       @csrf
-       @if (Session::has('message'))
-       <p> {{Session::get('message') }}</p>
-       @endif
-       <input type="file" name="file">
-       <button class="btn btn-dark mr-4">Importar interacciones</button>
-       <a href="{{  route('list')}}"class="btn btn-dark mr-4">Listado de interacciones</a>
-       </form>
+
        
       </div>
     </div>

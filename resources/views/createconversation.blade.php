@@ -2,6 +2,11 @@
 
 @section('content')
 
+<!-- Menu -->
+@include('layout.partials.nav')
+<!--fin Menu -->
+ <br><br>
+
 		
 <div class="row justify-content-center">
         <div class="col-md-4 col-md-offset-4">
@@ -30,20 +35,20 @@
 		
 					@endif
 
-                    
-					<form method="POST" action="{{ url('conversacion/store') }}">
+                    <form method="POST" action="{{ route('conversation.store',["id" => auth()->user()->id ])}}">
+					
 
 						{!! csrf_field() !!} 
 
 						<div class="form-group">
 						<label for="name">Nombre de la conversacion: </label>
-						<input type="text" class="form-control" name="name" placeholder="..." id="name" value="{{ old('name') }}">
+						<input type="text" class="form-control" name="name" placeholder="" id="name" value="{{ old('name') }}">
   						</div>
 	
 
 						<div class="form-group">
 						 <label for="password">Descripcion: </label>
-						 <input type="text" class="form-control" name="descripcion" placeholder="..." id="descripcion" value="{{ old('descripcion') }}">
+						 <input type="text" class="form-control" name="descripcion" placeholder="" id="descripcion" value="{{ old('descripcion') }}">
 						</div>
 
 

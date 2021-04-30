@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Conversation;
 
+
 class conversationController extends Controller
 {
     public function create()
@@ -16,17 +17,18 @@ class conversationController extends Controller
 
 
 
-    public function store(){
+    public function store($id){
 
-    //    $id = Auth::id();
+    
         $data=request();
         Conversation::create([
         'name'=>$data['name'],
         'description'=>$data['descripcion'],
-        'user_id'=>1
+        'user_id'=>$id
          ]);
 
-         $conv= DB::table('conversations')->get();
+         $conv= DB::table('conversations')->where('user_id' , $id)->get();
+         
 
          return view('listconversation', compact('conv'));   
 

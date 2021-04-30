@@ -49,6 +49,8 @@ class InteractionController extends Controller
     {
       $file = $request->file('file');
       Excel::import(new InteractionImport, $file);
+
+      
       $list= DB::table('interactions')->get();
       return view('listInt', compact('list'));
    

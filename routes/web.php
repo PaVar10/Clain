@@ -60,8 +60,8 @@ Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::get('/conversacion/nuevo','conversationController@create')->name('conversation.create');
 
-Route::post('/conversacion/store','conversationController@store')->name('conversation.store');
+//Route::post('/conversacion/store','conversationController@store')->name('conversation.store');
 
-Route::post('/conversacion/{id}/store','conversationController@store')->name('conversation.store');
+Route::post('/conversacion/store/{id}','conversationController@store')->name('conversation.store');
 
 Route::get('/conversacion/showlist','conversationController@showlist')->name('conversation.showlist');
