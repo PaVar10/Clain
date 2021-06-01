@@ -64,7 +64,8 @@
               <td><label for="text" name="description">{{$co->description}}</label></td>
             
 
-            <td><a href="{{  route('listado.carga',["id" => $co->id])}}"class="btn btn-link" >Importar Interacciones </a><td> 
+            <td><a href="{{  route('listado.carga',["id" => $co->id])}}"class="btn btn-link" >Importar Interacciones </a><td>
+            <a href="{{  route('interaccion.showlist',["id" => $co->id])}}"class="btn btn-link mr-4">mostrar interacciones</a> 
 
 
           

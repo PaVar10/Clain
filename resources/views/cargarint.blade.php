@@ -31,7 +31,7 @@
             @endif
             <input type="file" name="file">
             <button class="btn btn-dark mr-4">Importar interacciones</button>
-            <a href="{{  route('list')}}"class="btn btn-dark mr-4">Listado de interacciones</a>
+            <a href="{{  route('interaccion.showlist',["id" => $id])}}"class="btn btn-dark mr-4">mostrar interacciones</a>
             </form>
             
                     </div>

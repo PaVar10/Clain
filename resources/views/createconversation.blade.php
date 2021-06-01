@@ -54,8 +54,9 @@
 
 						<button type="submit" class="btn btn-primary">Guardar Conversacion</button>
 						<a href="{{ route('users') }}"class="btn btn-link" >Regresar al menu usuarios </a> <br>
-                        <a href="{{  route('conversation.showlist')}}"class="btn btn-dark mr-4">Listado de conversaciones</a>
+						<a href="{{  route('conversation.showlist',["id" => auth()->user()->id ])}}"class="btn btn-dark mr-4">mostrar conversaciones</a>
 				</form>
+				
 	
 			</div>
 	

@@ -31,14 +31,18 @@ Route::get('/usuario/export','UserController@export')->name('users.export');
 
 Route::get('interaccion/{id}/carga','InteractionController@carga')->name('listado.carga');
 
+Route::post('interaccion/import/{id}','InteractionController@importExcel')->name('interaccion.import');
+
+Route::get('interaccion/showlist/{id}','InteractionController@showlist')->name('interaccion.showlist');
 
 Route::get('listado/export','InteractionController@export')->name('listado.export');
 
-Route::post('interaccion/import/{id}','InteractionController@importExcel')->name('interaccion.import');
-
 Route::post('listado/import','InteractionController@importExcel')->name('listado.import');
 
+Route::get('/listado/{li}', 'InteractionController@listar')->name('list');
+
 Route::get('/listado', 'InteractionController@listar')->name('list');
+
 
 Route::get('/listado/{li}/editar','InteractionController@edit')->name('listado.edit');
 
@@ -64,4 +68,6 @@ Route::get('/conversacion/nuevo','conversationController@create')->name('convers
 
 Route::post('/conversacion/store/{id}','conversationController@store')->name('conversation.store');
 
-Route::get('/conversacion/showlist','conversationController@showlist')->name('conversation.showlist');
+//Route::get('/conversacion/showlist','conversationController@showlist')->name('conversation.showlist');
+
+Route::get('/conversacion/showlist/{id}','conversationController@showlist')->name('conversation.showlist');

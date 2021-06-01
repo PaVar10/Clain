@@ -36,6 +36,8 @@
       <div class="row">
 
  <a href="{{  route('conversation.create')}}"class="btn btn-dark mr-4">cargar conversacion</a>
+ <a href="{{  route('conversation.showlist',["id" => auth()->user()->id ])}}"class="btn btn-dark mr-4">mostrar conversaciones</a>
+ 
      
 
        

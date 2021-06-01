@@ -35,11 +35,14 @@ class conversationController extends Controller
 
   }
 
-        public function showlist()
+
+        public function showlist($id)
         {
-            $conv= DB::table('conversations')->get();
+
+          $conv= DB::table('conversations')->where('user_id' , $id)->get();
 
             return view('listconversation', compact('conv')); 
         }
+
 
 }
