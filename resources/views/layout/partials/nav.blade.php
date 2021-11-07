@@ -18,14 +18,6 @@
                 <div class="navbar-nav ml-auto">
 
                    
-
-                <!--   <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link active mr-4" href="#">Link</a> -->
-
-
-                  <!--  <a href=""class="btn btn-dark mr-4">Importar interacciones</a> 
-                    <a href="{{  route('listado.export')}}"class="btn btn-dark mr-4">Exportar Interacciones</a>
-                    <a href="{{  route('list')}}"class="btn btn-dark mr-4">Listado de  interacciones</a> -->
                    
                     <form method="POST" action="{{ route('logout') }} ">
                         {{ csrf_field() }}

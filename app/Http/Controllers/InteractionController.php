@@ -10,9 +10,12 @@ use App\Exports\InteractionExport;
 use App\Imports\InteractionImport;
 use Maatwebsite\Excel\Facades\Excel;
 
+use GuzzleHttp\Client;
+
 
 class InteractionController extends Controller
 {
+
 
     public function listar($id)
     {
@@ -106,5 +109,28 @@ class InteractionController extends Controller
     
   }
 
+
+    public  function clasificar($id)
+    {
+        $list= DB::table('interactions')->select('interaction')->where('conversation_id' , $id)->get();
+        dd($list);
+     //   return view('listInt', compact('list'));
+
+        $client = new Client([
+            // Base URI is used with relative requests ___ se define a que url te conectas
+            'base_uri' => 'https://jsonplaceholder.typicode.com',
+            // You can set any number of default request options.
+            'timeout'  => 2.0,
+        ]);
+             $response = $client->request('GET', 'posts'); //https://jsonplaceholder.typicode.com/posts
+
+                $posts = json_decode($response->getBody()->getContents());
+
+                dd($posts);
+
+             return view('welcome');
+
+
+    }
 
 }

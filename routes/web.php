@@ -37,16 +37,15 @@ Route::get('interaccion/showlist/{id}','InteractionController@showlist')->name('
 
 Route::get('listado/export','InteractionController@export')->name('listado.export');
 
-Route::post('listado/import','InteractionController@importExcel')->name('listado.import');
-
-Route::get('/listado/{li}', 'InteractionController@listar')->name('list');
-
-Route::get('/listado', 'InteractionController@listar')->name('list');
-
-
 Route::get('/listado/{li}/editar','InteractionController@edit')->name('listado.edit');
 
 Route::put('/listado/{li}/actualizar', 'InteractionController@update');
+
+//test
+
+Route::get('interaccion/{id}/clasificar','InteractionController@clasificar')->name('listado.clasificar');
+
+
 
 
 //login

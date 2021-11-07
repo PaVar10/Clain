@@ -11,9 +11,9 @@
   <div class="container">
     <br> <br>
     <a href="{{  route('listado.export')}}"class="btn btn-dark mr-4">Exportar Interacciones</a>
-    <!--   <a href="{{  route('list')}}"class="btn btn-dark mr-4">Listado de interacciones</a> -->
-    <a href="{{  route('list')}}"class="btn btn-dark mr-4">Clasificar de interacciones</a>
-    <a href="{{  route('list')}}"class="btn btn-dark mr-4">Generar Estadisticas</a>
+  
+    <a >Clasificar de interacciones</a>
+    <a >Generar Estadisticas</a>
 
     <br><br>
     <div class="row">
